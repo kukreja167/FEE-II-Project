@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('Images/bg3.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: 100% 100%;
+}
+
+.container {
+    width: 800px;
+    background-color: #000000;
+    padding: 40px;
+    border-radius: 10px;
+    padding-top: 2px;
+    
+   
+   /*box-shadow: 0 0 40px rgba(174, 88, 88, 0.849);*/
+}
+
+.form-container {
+    position: relative;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: space-between ;
+    margin-bottom: 10px;
+}
+
+.toggle-link {
+    width: 50%;
+    padding: 10px;
+    background-color:#57605f;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffffff;
+    border-radius: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.toggle-link.active, .toggle-link:hover {
+    background-color: #57605f;
+    color: #ffffff;
+
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+}
+
+#login-form:target, #signup-form:target {
+    display: flex;
+}
+
+#login-form:target + .form-toggle #login-link, #signup-form:target + .form-toggle #signup-link {
+    background-color: #93c927;
+    color: #ffffff;
+}
+
+#login-form:target ~ #signup-form, #signup-form:target ~ #login-form {
+    display: none;
+}
+
+.form h2 {
+    
+    margin-bottom: 10px;
+    color: #c3a8a8;
+}
+
+.form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+}
+
+.form input:focus {
+    border-color: #372804;
+}
+
+.form button {
+    padding: 10px;
+    background-color: #57605f;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.form button:hover {
+    background-color: #639cac;
+}
+
+.form p {
+    text-align: center;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.form p a {
+    color: #866ea9;
+    text-decoration: none;
+}
+
+.form p a:hover {
+    text-decoration: underline;
+}
+.size p{
+    color:white;
+    font-size:300%;  
+    margin: 20px;  
+    padding: 0px;
+    border: 20px solid black;
+    background-color: black;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+img{
+    border-radius: 20px;
+    width:90px;
+    height:70px;
+    margin-right: 20px;
+    margin-bottom: 2px;
+   
+    }

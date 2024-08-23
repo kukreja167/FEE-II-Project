@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="loginxerox.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="size">
+        <p align="left"  >
+            <img src="Images/logo1.png" align="left">Shape Shift</p>
+    </div>
+        <div class="form-container">
+            <div class="form-toggle">
+                <a href="#login-form" class="toggle-link active" id="login-link">Login</a>
+                <a href="#signup-form" class="toggle-link" id="signup-link">Signup</a>
+
+            </div>
+            
+            <div id="login-form" class="form active">
+                <h2>Login</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#signup-form">Signup here</a></p>
+            </div>
+
+            <div id="signup-form" class="form">
+                <h2>Signup</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Signup</button>
+                <p>Already have an account? <a href="#login-form">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
