@@ -1,0 +1,97 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #ff5722 3px solid;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 20px 0;
+    background: #000000;
+    margin-top: 20px;
+}
+
+.about-us h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.about-us p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.about-us ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.about-us ul li {
+    margin-bottom: 10px;
+}
+
+.about-us h3 {
+    color: #ff5722;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

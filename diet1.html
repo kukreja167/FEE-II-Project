@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Shift - Exercise & Diet Plan</title>
+    <link rel="stylesheet" href="diet.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Personalized Exercise & Diet Plan</h1>
+        <div id="planDetails" class="plan-details"></div>
+        <a href="diet.html" class="back-link">
+            Back to BMI Calculator</a>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.slice(1);
+            const pairs = queryString.split('&');
+            pairs.forEach(pair => {
+                const [key, value] = pair.split('=');
+                params[key] = decodeURIComponent(value);
+            });
+            return params;
+        }
+
+        function loadPlanDetails(bmiCategory, activityLevel) {
+            const planDetails = document.getElementById('planDetails');
+            let content = '';
+
+            if (bmiCategory === 'underweight') {
+                content = `<h2>Underweight - ${activityLevel.replace('_', ' ')}</h2>`;
+                content += '<p>Focus on a calorie-dense diet with strength training exercises to build muscle mass.</p>';
+                content += '<h3>Diet Recommendations:</h3>';
+                content += '<ul><li>Include more whole grains, lean proteins, and healthy fats in your meals.</li>';
+                content += '<li>Snack on nuts, seeds, and dried fruits.</li></ul>';
+                content += '<h3>Exercise Recommendations:</h3>';
+                content += '<ul><li>Strength training: 3-4 times per week.</li>';
+                content += '<li>Moderate cardio: 2-3 times per week to improve cardiovascular health.</li></ul>';
+            } else if (bmiCategory === 'normal') {
+                content = `<h2>Normal Weight - ${activityLevel.replace('_', ' ')}</h2>`;
+                content += '<p>Maintain your healthy weight with a balanced diet and regular exercise.</p>';
+                content += '<h3>Diet Recommendations:</h3>';
+                content += '<ul><li>Consume a variety of foods from all food groups.</li>';
+                content += '<li>Moderation is key. Pay attention to portion sizes.</li></ul>';
+                content += '<h3>Exercise Recommendations:</h3>';
+                content += '<ul><li>Cardio: 150 minutes of moderate activity per week.</li>';
+                content += '<li>Strength training: 2-3 times per week.</li>';
+                content += '<li>Flexibility exercises: 2-3 times per week.</li></ul>';
+            } else if (bmiCategory === 'overweight') {
+                content = `<h2>Overweight - ${activityLevel.replace('_', ' ')}</h2>`;
+                content += '<p>Work on reducing body fat while maintaining muscle mass.</p>';
+                content += '<h3>Diet Recommendations:</h3>';
+                content += '<ul><li>Focus on a calorie deficit by reducing portion sizes and cutting down on sugary foods.</li>';
+                content += '<li>Increase intake of vegetables, fruits, and lean proteins.</li></ul>';
+                content += '<h3>Exercise Recommendations:</h3>';
+                content += '<ul><li>Cardio: 250 minutes of moderate activity per week to aid weight loss.</li>';
+                content += '<li>Strength training: 2-3 times per week to maintain muscle mass.</li></ul>';
+            } else if (bmiCategory === 'obesity') {
+                content = `<h2>Obesity - ${activityLevel.replace('_', ' ')}</h2>`;
+                content += '<p>Focus on significant weight loss with a structured plan.</p>';
+                content += '<h3>Diet Recommendations:</h3>';
+                content += '<ul><li>Adopt a low-calorie, nutrient-dense diet.</li>';
+                content += '<li>Avoid processed foods and sugary drinks.</li></ul>';
+                content += '<h3>Exercise Recommendations:</h3>';
+                content += '<ul><li>Cardio: 300 minutes of moderate activity per week for substantial weight loss.</li>';
+                content += '<li>Low-impact strength training: 2-3 times per week to prevent muscle loss.</li></ul>';
+            }
+
+            planDetails.innerHTML = content;
+        }
+
+        const params = getQueryParams();
+        const bmiCategory = params.bmi || 'normal';
+        const activityLevel = params.activity || 'moderate';
+        loadPlanDetails(bmiCategory, activityLevel);
+    </script>
+</body>
+</html>
